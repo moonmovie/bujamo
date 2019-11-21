@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" cintent="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>login test</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% block content %}
+
+    <div class="container">
+        <h1>login</h1>
+        <!--view login class value 넘겨줌-->
+        <form method="POST" action="{%url 'login'%}">
+            {% csrf_token %}
+            <label>username : <input name="username" type="text" value="{{username}}"></label><br>
+            <label>password : <input name="password" type="password" value="{{password}}"></label><br><br>
+            <input type="submit" class="btn btn-primary" value="Login">
+        </form>
+    </div>
+    {% endblock %}
+
+    <script src="/static/js/jquery-3.1.1.js"></script>
+    <script src="/static/js/bootsrtap.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
